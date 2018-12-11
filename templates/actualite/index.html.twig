@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualite index{% endblock %}
+
+{% block body %}
+    <h1>Actualite index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Editeur_id</th>
+                <th>Service_id</th>
+                <th>Titre</th>
+                <th>Information</th>
+                <th>DatePublication</th>
+                <th>DateDiffusion</th>
+                <th>Statut</th>
+                <th>Valide</th>
+                <th>Focus</th>
+                <th>Differe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actualite in actualites %}
+            <tr>
+                <td>{{ actualite.id }}</td>
+                <td>{{ actualite.editeurId }}</td>
+                <td>{{ actualite.serviceId }}</td>
+                <td>{{ actualite.titre }}</td>
+                <td>{{ actualite.information }}</td>
+                <td>{{ actualite.datePublication ? actualite.datePublication|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ actualite.dateDiffusion ? actualite.dateDiffusion|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ actualite.statut }}</td>
+                <td>{{ actualite.valide }}</td>
+                <td>{{ actualite.focus }}</td>
+                <td>{{ actualite.differe }}</td>
+                <td>
+                    <a href="{{ path('actualite_show', {'id': actualite.id}) }}">show</a>
+                    <a href="{{ path('actualite_edit', {'id': actualite.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('actualite_new') }}">Create new</a>
+{% endblock %}

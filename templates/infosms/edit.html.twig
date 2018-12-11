@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Infosms{% endblock %}
+
+{% block body %}
+    <h1>Edit Infosms</h1>
+
+    {{ include('infosms/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('infosms_index') }}">back to list</a>
+
+    {{ include('infosms/_delete_form.html.twig') }}
+{% endblock %}

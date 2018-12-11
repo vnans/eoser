@@ -1,0 +1,7 @@
+server_name:
+    host: ftp.moser-ci.com
+    port: 21 
+    user: eoser@eoser.alcalis.tech
+    pass: @lcalis18
+    path:
+        remote: web/

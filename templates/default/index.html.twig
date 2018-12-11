@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil e-OSER{% endblock %}
+
+{% block body %}
+ <body>
+ 	 <div id="preloader"></div>
+
+  <!--==========================
+  Hero Section
+  ============================-->
+        <!-- Heading Row -->
+    <section id="hero2">
+       <div class="row my-4">
+        <div class="col-lg-2" id="pub1">
+         {#  <img src="img/eal3.jpg" alt=""> #}
+        {#   <a class="btn btn-primary btn-lg" href="#">Call to Action!</a> #}
+        </div>
+        <div class="col-lg-8">
+          {# <img class="img-fluid rounded" src="http://placehold.it/900x400" alt=""> #}
+          <section id="hero">
+            <div class="hero-container">
+              <div class="wow fadeIn">
+                <div class="hero-logo">
+                <!--  <img class="" src="img/logo.png" alt="Imperial"> -->
+                </div>
+
+                <h1>OSER au 98025</h1>
+                <h2> <b>e-Oser vous informe</b> <span class="rotating">en temps réel , sur tout support ,partout en  Côte en d'Ivoire</span></h2>
+                <div class="actions">
+                  <a href="#about" class="btn-get-started">Se connecter</a>
+                  <a href="{{ path('infosms_index')}}" class="btn-services">Les infos du moments</a>
+                </div>
+              </div>
+            </div>
+          </section> 
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-2">
+         <img src="img/eal3.jpg" alt="">
+       {#    <a class="btn btn-primary btn-lg" href="#">Call to Action!</a> #}
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+    </section>
+     
+
+     <!--==========================
+      Clients Section
+    ============================-->
+    <section id="clients" class="wow fadeInUp">
+      <div class="container">
+
+        <header  class="section-header">
+          <h1>Nos partenaires</h1>
+        </header>
+
+        <div class="owl-carousel clients-carousel">
+          <img src="img/clients/client-1.png" alt="">
+          <img src="img/clients/client-2.png" alt="">
+          <img src="img/clients/client-3.png" alt="">
+          <img src="img/clients/client-4.png" alt="">
+          <img src="img/clients/client-5.png" alt="">
+          <img src="img/clients/client-6.png" alt="">
+          <img src="img/clients/client-7.png" alt="">
+          <img src="img/clients/client-8.png" alt="">
+        </div>
+
+      </div>
+    </section><!-- #clients -->
+
+  
+  
+
+  <!-- #header -->
+
+  
+
+ 
+
+
+  
+
+  
+ </body>
+{% endblock %}

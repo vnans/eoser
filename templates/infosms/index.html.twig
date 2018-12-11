@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} infos routières{% endblock %}
+
+{% block body %}
+
+<body>
+    
+
+    <!--==========================
+  Services Section
+  ============================-->
+  <section id="services">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Infos SMS</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description">les info routière des dernières 24 heures</p>
+        </div>
+      </div>
+
+      <div class="row">
+         {% for infosm in infosms %}
+        <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-commenting-o"></i></div>
+          <h4 class="service-title"><a href="">{{ infosm.libelle }}</a></h4>
+          <p class="service-description">{{ infosm.contenu }}</p>
+          <p class="service-description">Publié le : {{ infosm.dateajout ? infosm.dateajout|date('Y-m-d H:i:s') : '' }}</p>
+        </div>
+         {% endfor %}
+  
+      </div>
+    </div>
+  </section>
+
+
+    <h1>Infosms index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Contenu</th>
+                <th>Dateajout</th>
+                <th>Publier</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for infosm in infosms %}
+            <tr>
+                <td>{{ infosm.id }}</td>
+                <td>{{ infosm.libelle }}</td>
+                <td>{{ infosm.contenu }}</td>
+                <td>{{ infosm.dateajout ? infosm.dateajout|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ infosm.publier ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('infosms_show', {'id': infosm.id}) }}">Détails</a>
+                    <a href="{{ path('infosms_edit', {'id': infosm.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune annonces trouvées</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('infosms_new') }}">Ajouter une annonce</a>
+ </body>
+{% endblock %}
